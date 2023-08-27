@@ -1,66 +1,108 @@
--- ds.page: Page with right-sidebar 👉
-sidebar: true
+-- component button:
+caption title:
+string button1:
+string link1:
+boolean $is-hover-1: false
+string button2:
+string link2:
+boolean $is-hover-2: false
+string button3:
+string link3:
+boolean $is-hover-3: false
+string button4:
+string link4:
+boolean $is-hover-4: false
+ftd.color text-color: $inherited.colors.text-strong
+ftd.color bg-color: $inherited.colors.background.base
+ftd.color border-color: $inherited.colors.border-strong
+optional ftd.shadow hover-shadow:
+optional ftd.responsive-type role:
 
--- ds.page.right-sidebar:
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 40
 
--- ds.h3: Heading in sidebar
+-- ftd.text: $button.button1
+role: $inherited.types.heading-hero
+border-width.px: 2
+padding.px: 10
+border-radius.px: 6
+style: bold
+text-align: center
+color: $button.text-color
+background.solid: $button.bg-color
+border-color: $button.border-color
+shadow if { button.is-hover-1 } : $button.hover-shadow
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-hover-1, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-hover-1, v = false)
+link: $button.link1
 
-You can call any component inside sidebar. 
+-- ftd.text: $button.button2
+role: $inherited.types.heading-large
+border-width.px: 2
+padding.px: 10
+border-radius.px: 6
+style: bold
+text-align: center
+color: $button.text-color
+background.solid: $button.bg-color
+border-color: $button.border-color
+shadow if { button.is-hover-2 } : $button.hover-shadow
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-hover-2, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-hover-2, v = false)
+link: $button.link2
 
-This right-sidebar will appear on all pages.
+-- ftd.text: $button.button3
+role: $inherited.types.heading-medium
+border-width.px: 2
+padding.px: 10
+border-radius.px: 6
+style: bold
+text-align: center
+color: $button.text-color
+background.solid: $button.bg-color
+border-color: $button.border-color
+shadow if { button.is-hover-3 } : $button.hover-shadow
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-hover-3, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-hover-3, v = false)
+link: $button.link3
 
--- ds.code:
-lang: ftd
+-- ftd.text: $button.button4
+role: $inherited.types.heading-small
+border-width.px: 2
+padding.px: 10
+border-radius.px: 6
+style: bold
+text-align: center
+color: $button.text-color
+background.solid: $button.bg-color
+border-color: $button.border-color
+shadow if { button.is-hover-4 } : $button.hover-shadow
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-hover-4, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-hover-4, v = false)
+link: $button.link4
 
-\-- ftd.text: Hello World
+-- end: ftd.column
 
--- end: ds.page.right-sidebar
+-- end: button
 
--- ds.page.body:
 
-If you want to show right-sidebar on your page you can add it like sidebar shown
-in this page 👉.
+-- ftd.color berserk-dark:
+light: black
+dark: white
 
--- ds.h3: `right-sidebar` documentation
+-- ftd.color berserk-light:
+light: white
+dark: black
 
-[Click here](https://fastn-community.github.io/doc-site/right-sidebar/) to read
-more about `right-sidebar`.
+-- ftd.color shadow-color:
+light: #cae9ee
+dark: #e4b0ac
 
--- ds.h3: How this page is built?
-
-Copy below code snippet to create pages like this with right-sidebar.
-
--- ds.code:
-lang: ftd
-
-\-- ds.page: Page with right-sidebar 👉
-sidebar: true
-
-\-- ds.page.right-sidebar:
-
-\-- ds.h3: Heading in sidebar
-
-You can call any component inside sidebar. 
-
-This right-sidebar will appear on all pages.
-
-\-- ds.code:
-lang: ftd
-
-\-- ftd.text: Hello World
-
-\-- end: ds.page.right-sidebar
-
-\-- ds.page.body:
-
-If you want to show right-sidebar on your page you can add it like sidebar shown
-in this page 👉.
-
-\-- ds.h3: Read right-sidebar documentation
-
-[Click here](https://fastn-community.github.io/doc-site/right-sidebar/) to read
-more about `right-sidebar`.
-
-\-- end: ds.page
-
--- end: ds.page
+-- ftd.shadow s:
+color: $shadow-color
+x-offset.px: 0
+y-offset.px: 0
+blur.px: 50
+spread.px: 7
