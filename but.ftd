@@ -1,0 +1,108 @@
+-- component button:
+caption title:
+string button1:
+string link1:
+boolean $is-hover-1: false
+string button2:
+string link2:
+boolean $is-hover-2: false
+string button3:
+string link3:
+boolean $is-hover-3: false
+string button4:
+string link4:
+boolean $is-hover-4: false
+ftd.color text-color: $inherited.colors.text-strong
+ftd.color bg-color: $inherited.colors.background.base
+ftd.color border-color: $inherited.colors.border-strong
+optional ftd.shadow hover-shadow:
+optional ftd.responsive-type role:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 40
+
+-- ftd.text: $button.button1
+role: $inherited.types.heading-hero
+border-width.px: 2
+padding.px: 10
+border-radius.px: 6
+style: bold
+text-align: center
+color: $button.text-color
+background.solid: $button.bg-color
+border-color: $button.border-color
+shadow if { button.is-hover-1 } : $button.hover-shadow
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-hover-1, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-hover-1, v = false)
+link: $button.link1
+
+-- ftd.text: $button.button2
+role: $inherited.types.heading-large
+border-width.px: 2
+padding.px: 10
+border-radius.px: 6
+style: bold
+text-align: center
+color: $button.text-color
+background.solid: $button.bg-color
+border-color: $button.border-color
+shadow if { button.is-hover-2 } : $button.hover-shadow
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-hover-2, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-hover-2, v = false)
+link: $button.link2
+
+-- ftd.text: $button.button3
+role: $inherited.types.heading-medium
+border-width.px: 2
+padding.px: 10
+border-radius.px: 6
+style: bold
+text-align: center
+color: $button.text-color
+background.solid: $button.bg-color
+border-color: $button.border-color
+shadow if { button.is-hover-3 } : $button.hover-shadow
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-hover-3, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-hover-3, v = false)
+link: $button.link3
+
+-- ftd.text: $button.button4
+role: $inherited.types.heading-small
+border-width.px: 2
+padding.px: 10
+border-radius.px: 6
+style: bold
+text-align: center
+color: $button.text-color
+background.solid: $button.bg-color
+border-color: $button.border-color
+shadow if { button.is-hover-4 } : $button.hover-shadow
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-hover-4, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-hover-4, v = false)
+link: $button.link4
+
+-- end: ftd.column
+
+-- end: button
+
+
+-- ftd.color berserk-dark:
+light: black
+dark: white
+
+-- ftd.color berserk-light:
+light: white
+dark: black
+
+-- ftd.color shadow-color:
+light: #cae9ee
+dark: #e4b0ac
+
+-- ftd.shadow s:
+color: $shadow-color
+x-offset.px: 0
+y-offset.px: 0
+blur.px: 50
+spread.px: 7
